@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: oauth2-resource-server
+server:
+  port: 8090
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uri: http://auth-server:9000
