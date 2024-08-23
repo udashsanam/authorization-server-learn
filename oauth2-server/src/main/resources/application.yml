@@ -4,22 +4,4 @@ spring:
 server:
   port: 9000
   security:
-    oauth2:
-      authorization-server:
-        article-client:
-          registration:
-            client-id: articles-client
-            client-secret: "{noop}secret"
-            client-name: Articles Client
-            client-authentication-methods:
-              -client_secret_basic
-            authorization-grant-types:
-              -authorization_code
-              -refresh_token
-            redirect-urls:
-              -http://127.0.0.1:8080/login/oauth2/code/asticles-client-oidc
-              -http://127.0.0.1:8080/authorized
-            scopes:
-              -openid
-              -articles.read
         issuer: http://auth-server:9000
