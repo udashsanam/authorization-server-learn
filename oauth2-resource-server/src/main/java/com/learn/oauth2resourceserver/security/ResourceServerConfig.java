@@ -17,14 +17,17 @@ public class ResourceServerConfig {
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.securityMatcher("/articles/**")
           .authorizeHttpRequests(authorize -> authorize.anyRequest()
-            .hasAuthority("SCOPE_articles.read"))
+            .hasAuthority("SCOPE_openid"))
           .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()));
         return http.build();
     }
 
+    /*
+    * this is user to decode the token provided in jwt
+     */
     @Bean
     public JwtDecoder jwtDecoder() {
-        return NimbusJwtDecoder.withJwkSetUri("http://localhost:9000/.well-known/jwks.json").build();
+        return NimbusJwtDecoder.withJwkSetUri("http://localhost:9000/oauth2/jwks").build();
     }
 }
 
