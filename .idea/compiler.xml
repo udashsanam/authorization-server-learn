@@ -8,12 +8,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="oauth2-resource-server" />
+        <module name="oauth2-client" />
         <module name="oauth2-server" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="oauth2-client" options="-parameters" />
       <module name="oauth2-resource-server" options="-parameters" />
       <module name="oauth2-server" options="-parameters" />
     </option>

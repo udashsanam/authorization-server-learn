@@ -64,9 +64,15 @@ public class AuthServerConfig {
                  */
                 .clientSecret("$2a$10$GBujza27YEHO7hIyu0Qk/OvC9izmz7/zHG72YQxNh8uCOfZeGIx2m")
                 .scope("openid")
-//                .scope("articles.read")
-//                .redirectUri("http://127.0.0.1:8080/login/oauth2/code/articles-client-oidc")
-                .redirectUri("http://127.0.0.1:8080/authorized")
+                .scope("articles.read")
+                /*
+                *In OAuth 2.0, the redirect URL (also known as the redirect URI or callback URL) is a critical parameter
+                * used during the authorization process. It is the URL to which the authorization server
+                * sends the user (along with the authorization code or access token) after the user has successfully
+                *  granted or denied the requested permissions.
+                 */
+                .redirectUri("http://127.0.0.1:8080/login/oauth2/code/articles-client-oidc")
+//                .redirectUri("http://127.0.0.1:8080/authorized")
                 .clientName("Articles Client")
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                 .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)

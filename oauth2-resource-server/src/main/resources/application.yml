@@ -9,3 +9,8 @@ server:
         jwt:
           issuer-uri: http://localhost:90000
 #          jwk-set-uri: http://localhost:9000/oauth2/jwks
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
