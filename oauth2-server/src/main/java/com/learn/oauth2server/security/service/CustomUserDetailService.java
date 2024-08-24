@@ -27,19 +27,15 @@ public class CustomUserDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         com.learn.oauth2server.entity.User user = userRepo.findByUsername(username);
-//        user = new User();
-//        user.setUsername("test");
-//        /*
-//        *password is test
-//         */
-//        user.setPassword(passwordEncoder.encode("test"));
-//        user.set_active(true);
-//        return  new AuthenticationUser(user);
+        user = new User();
+        user.setUsername("test");
+        /*
+        *password is test
+         */
+        user.setPassword(passwordEncoder.encode("test"));
+        user.set_active(true);
+        return  new AuthenticationUser(user);
 
-        return new org.springframework.security.core.userdetails.User("test",
-                passwordEncoder.encode("test"), true,
-               true, true,
-                true, Collections.emptyList());
 
     }
 }
