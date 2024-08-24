@@ -2,11 +2,12 @@ package com.learn.oauth2server.security.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class LoginController {
 
-    @RequestMapping("/login")
+    @RequestMapping("/logins")
     public String login(){
         return "sdlfk";
     }

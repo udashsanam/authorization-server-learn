@@ -1,7 +1,31 @@
 spring:
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost:5432}/oauth2_learn
+    username: ${POSTGRES_UNAME:sanamudash}
+    password: ${POSTGRES_PWD:postgres}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 3000
+      connection-timeout: 30000
+      idle-timeout: 10000
+      max-lifetime: 30000
+      leak-detection-threshold: 20000
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database: postgresql
+    properties:
+      format_sql: true
   application:
     name: oauth2-server
 server:
   port: 9000
   security:
         issuer: http://auth-server:9000
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG

@@ -1,21 +1,24 @@
-package com.learn.oauth2server.security;
+package com.learn.oauth2server.security.config;
 
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
 import com.nimbusds.jose.jwk.source.ImmutableJWKSet;
 import com.nimbusds.jose.jwk.source.JWKSource;
 import com.nimbusds.jose.proc.SecurityContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.oauth2.server.servlet.OAuth2AuthorizationServerAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.MediaType;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.core.AuthorizationGrantType;
@@ -48,22 +51,29 @@ public class DefaultSecurity {
     @Bean
     @Order(2)
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(authorizeRequests -> authorizeRequests.anyRequest().authenticated())
+        http.authorizeHttpRequests(authorizeRequests -> authorizeRequests.anyRequest().permitAll())
                 .formLogin(Customizer.withDefaults());
         return http.build();
     }
 
+//    @Bean
+//    UserDetailsService users() {
+//        PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+//        UserDetails user = User.builder()
+//                .username("admin")
+//                .password("password")
+//                .passwordEncoder(encoder::encode)
+//                .roles("USER")
+//                .build();
+//        return new InMemoryUserDetailsManager(user);
+//    }
+
     @Bean
-    UserDetailsService users() {
-        PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-        UserDetails user = User.builder()
-                .username("admin")
-                .password("password")
-                .passwordEncoder(encoder::encode)
-                .roles("USER")
-                .build();
-        return new InMemoryUserDetailsManager(user);
+    public PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
     }
+
+
 
 
 

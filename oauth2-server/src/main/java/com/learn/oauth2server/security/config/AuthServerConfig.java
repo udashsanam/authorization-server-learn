@@ -1,10 +1,11 @@
-package com.learn.oauth2server.security;
+package com.learn.oauth2server.security.config;
 
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
 import com.nimbusds.jose.jwk.source.ImmutableJWKSet;
 import com.nimbusds.jose.jwk.source.JWKSource;
 import com.nimbusds.jose.proc.SecurityContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.oauth2.server.servlet.OAuth2AuthorizationServerAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +14,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.http.MediaType;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.core.AuthorizationGrantType;
 import org.springframework.security.oauth2.core.ClientAuthenticationMethod;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
@@ -36,6 +38,9 @@ import java.util.UUID;
 @Configuration
 public class AuthServerConfig {
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @Bean
     @Order(Ordered.HIGHEST_PRECEDENCE)
     SecurityFilterChain authorizationServerSecurityFilterChain(HttpSecurity http, OAuth2AuthorizationServerAutoConfiguration oAuth2AuthorizationServerAutoConfiguration) throws Exception {
@@ -54,7 +59,10 @@ public class AuthServerConfig {
     public RegisteredClientRepository registeredClientRepository() {
         RegisteredClient registeredClient = RegisteredClient.withId(UUID.randomUUID().toString())
                 .clientId("article-client")
-                .clientSecret("{noop}secret")
+                /*
+                *client secret should use the bcrypt because we create bean of bcrypt  encoder
+                 */
+                .clientSecret("$2a$10$GBujza27YEHO7hIyu0Qk/OvC9izmz7/zHG72YQxNh8uCOfZeGIx2m")
                 .scope("openid")
 //                .scope("articles.read")
 //                .redirectUri("http://127.0.0.1:8080/login/oauth2/code/articles-client-oidc")
@@ -63,7 +71,7 @@ public class AuthServerConfig {
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                 .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
                 .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
-//                .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
+                .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
                 .clientSettings(ClientSettings.builder().requireAuthorizationConsent(true).build())
                 .build();
 
