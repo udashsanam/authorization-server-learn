@@ -1,0 +1,64 @@
+
+Q	java:S125<"<This block of commented-out lines of code should be removed.(ùıßü
+T
+java:S1128"9Remove this unused import 'com.nimbusds.jose.jwk.JWKSet'.(ËŒïûÿÿÿÿ
+T
+java:S1128"9Remove this unused import 'com.nimbusds.jose.jwk.RSAKey'.(éÚµşÿÿÿÿ
+_
+java:S1128"IRemove this unused import 'com.nimbusds.jose.jwk.source.ImmutableJWKSet'.(¯‘è¹
+Y
+java:S1128"CRemove this unused import 'com.nimbusds.jose.jwk.source.JWKSource'.(ğ…¬µ
+^
+java:S1128"CRemove this unused import 'com.nimbusds.jose.proc.SecurityContext'.(ˆæ…¨úÿÿÿÿ
+n
+java:S1128"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡¸Îùÿÿÿÿ
+©
+java:S1128	"Remove this unused import 'org.springframework.boot.autoconfigure.security.oauth2.server.servlet.OAuth2AuthorizationServerAutoConfiguration'.(Ğ÷÷éüÿÿÿÿ
+Z
+java:S1128"?Remove this unused import 'org.springframework.http.MediaType'.(úŸİ¯şÿÿÿÿ
+—
+java:S1128"€Remove this unused import 'org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder'.(£ØÓ‰
+e
+java:S1128"ORemove this unused import 'org.springframework.security.core.userdetails.User'.(–Ä€
+l
+java:S1128"VRemove this unused import 'org.springframework.security.core.userdetails.UserDetails'.(ÊÁ¥
+s
+java:S1128"]Remove this unused import 'org.springframework.security.core.userdetails.UserDetailsService'.(¶…¥à
+w
+java:S1128"aRemove this unused import 'org.springframework.security.crypto.factory.PasswordEncoderFactories'.(—¶¼é
+r
+java:S1128"\Remove this unused import 'org.springframework.security.oauth2.core.AuthorizationGrantType'.(£Úê°
+u
+java:S1128"`Remove this unused import 'org.springframework.security.oauth2.core.ClientAuthenticationMethod'.(ìŠ=
+e
+java:S1128"ORemove this unused import 'org.springframework.security.oauth2.jwt.JwtDecoder'.(¸½œÚ
+š
+java:S1128"Remove this unused import 'org.springframework.security.oauth2.server.authorization.client.InMemoryRegisteredClientRepository'.(Ò²¤şøÿÿÿÿ
+ˆ
+java:S1128"mRemove this unused import 'org.springframework.security.oauth2.server.authorization.client.RegisteredClient'.(ÃâŸŸûÿÿÿÿ
+’
+java:S1128"wRemove this unused import 'org.springframework.security.oauth2.server.authorization.client.RegisteredClientRepository'.(Ô·’úÿÿÿÿ
+·
+java:S1128" Remove this unused import 'org.springframework.security.oauth2.server.authorization.config.annotation.web.configuration.OAuth2AuthorizationServerConfiguration'.(ÙëåŸ
+²
+java:S1128"›Remove this unused import 'org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer'.(ùÏÚ‹
+•
+java:S1128 "zRemove this unused import 'org.springframework.security.oauth2.server.authorization.settings.AuthorizationServerSettings'.(±¨À»ùÿÿÿÿ
+ˆ
+java:S1128!"mRemove this unused import 'org.springframework.security.oauth2.server.authorization.settings.ClientSettings'.(äËÜùøÿÿÿÿ
+|
+java:S1128""aRemove this unused import 'org.springframework.security.provisioning.InMemoryUserDetailsManager'.(îŒúùÿÿÿÿ
+‚
+java:S1128$"mRemove this unused import 'org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint'.( ıİ
+}
+java:S1128%"bRemove this unused import 'org.springframework.security.web.util.matcher.MediaTypeRequestMatcher'.(ë—ÍÄüÿÿÿÿ
+H
+java:S1128'"2Remove this unused import 'java.security.KeyPair'.(üúì›
+V
+java:S1128(";Remove this unused import 'java.security.KeyPairGenerator'.(åÚ¼–úÿÿÿÿ
+^
+java:S1128)"CRemove this unused import 'java.security.interfaces.RSAPrivateKey'.(Ç½ß’øÿÿÿÿ
+]
+java:S1128*"BRemove this unused import 'java.security.interfaces.RSAPublicKey'.(‘±–˜ÿÿÿÿÿ
+F
+java:S1128+"+Remove this unused import 'java.util.UUID'.(ÀãÄ£úÿÿÿÿ

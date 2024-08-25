@@ -1,0 +1,23 @@
+
+…
+java:S6813*"BRemove this field injection and use constructor injection instead.(êæÄŞ8¤ÕéÇ˜2J$322066c4-ba38-4e0f-aec4-daadb20422d8
+…
+java:S6813-"BRemove this field injection and use constructor injection instead.(êæÄŞ8¥ÕéÇ˜2J$d094d5ea-866d-455b-ba15-fa4dc9f8c278
+˜
+java:S3305."PInject this field value directly into "jwkSource", the only method that uses it.(îìÅ­ùÿÿÿÿ8¦ÕéÇ˜2J$8f58ac3d-e9a8-431f-8bc7-67391b668c6e
+~	java:S125:"<This block of commented-out lines of code should be removed.(·ÌÄû8«ÕéÇ˜2J$67ef4120-824c-4d7e-950c-1b5837a06035
+l	java:S106b"+Replace this use of System.out by a logger.(·ÄÇH8¯ÕéÇ˜2J$7729d950-da4d-4da1-bdaf-652e0db59e0a
+~	java:S125w"<This block of commented-out lines of code should be removed.(¡ú÷Â8´ÕéÇ˜2J$1de47870-9ad6-4db5-a050-e0f23418b87f
+ƒ	java:S125}"<This block of commented-out lines of code should be removed.(Û£üÿÿÿÿ8ŸòøÇ˜2J$1df214c4-1824-431d-b69c-4f7f77c08698
+X
+java:S1128"6Remove this unused import 'com.nimbusds.jose.jwk.JWK'.(è’åíşÿÿÿÿ8¯«ùÇ˜2
+a
+java:S1128"?Remove this unused import 'org.springframework.http.MediaType'.(úŸİ¯şÿÿÿÿ8¯«ùÇ˜2
+‰
+java:S1128"mRemove this unused import 'org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint'.( ıİ8¯«ùÇ˜2
+„
+java:S1128"bRemove this unused import 'org.springframework.security.web.util.matcher.MediaTypeRequestMatcher'.(ë—ÍÄüÿÿÿÿ8¯«ùÇ˜2
+O
+java:S1128!"2Remove this unused import 'java.security.KeyPair'.(üúì›8¯«ùÇ˜2
+]
+java:S1128"";Remove this unused import 'java.security.KeyPairGenerator'.(åÚ¼–úÿÿÿÿ8¯«ùÇ˜2

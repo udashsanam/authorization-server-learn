@@ -2,11 +2,14 @@ package com.learn.oauth2server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 import java.security.SecureRandom;
 import java.util.Base64;
 
 @SpringBootApplication
+@ConfigurationPropertiesScan
 public class Oauth2ServerApplication {
 
 	public static void main(String[] args) {
